@@ -4,7 +4,7 @@ A live statistical report of the stocks is provided to analyse their respective 
 
 ## Demo
 
-See [Demo](https://nitin-daddikar.github.io/Live-Stock).
+See [Demo](https://nitin-daddikar.github.io/Live-Stock/).
 
 ## Screenshots
 ![Screentshot 1](https://i.ibb.co/xLKDhgV/SC1.png) ![Screentshot 2](https://i.ibb.co/hsFxmYT/SC2.png)
