@@ -1,0 +1,43 @@
+<p id="pageHeading" class="txtCenter">
+    Live Stocks Report
+</p>
+
+<table id="stockTable" cellspacing="0">
+    <thead>
+        <tr>
+            <th class="width20 txtLeft">Ticker</th>
+            <th class="width25 txtCenter">Stats</th>
+            <th class="width20 txtCenter" colspan="2">Price</th>
+            <th class="width15 txtCenter">Last update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="tableRow" *ngFor="let stock of stocksList">
+            <td class="width20">
+                <span class="stockName">{{ stock.name }}</span>
+            </td>
+
+            <td class="width25">
+                <div id="line-chart-parent">
+                    <ngx-charts-line-chart [results]="stock.chartData" [scheme]="{ domain: ['#676767'] }" [tooltipDisabled]="true"></ngx-charts-line-chart>
+                </div>
+            </td>
+
+            <td class="width20">
+                <span class="stockPrice FR">{{ stock.price }} &#8377;</span>
+            </td>
+
+            <td class="width20">
+                <div *ngIf="stock.status !== null" class="priceDiff" [ngClass]="{ 'negetive' :  stock.status !== null && !stock.status, 'positive' :  stock.status }">
+                    <i *ngIf="stock.status !== null && !stock.status" class="fa fa-minus fa-1x" aria-hidden="true"> </i>
+                    <i *ngIf="stock.status !== null && stock.status" class="fa fa-plus fa-1x" aria-hidden="true"> </i>
+                    <span class="FR">{{ stock.diff }} &#8377;</span>
+                </div>
+            </td>
+
+            <td class="width15">
+                <p class="txtCenter">{{ getTimeStringFromTimestamp(stock) }}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

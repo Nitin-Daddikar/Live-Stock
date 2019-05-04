@@ -1,0 +1,113 @@
+$white-color: #ffffff;
+$black-color: #000000;
+$danger-color: #f8866d;
+$positive-color: #54ddb6;
+$light-blue-color: #f2f8fd;
+@font-face {
+    font-family: 'font-light';
+    src: url('../assets/fonts/Muli-Light.ttf');
+}
+
+@font-face {
+    font-family: 'font-regular';
+    src: url('../assets/fonts/Muli-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'font-semibold';
+    src: url('../assets/fonts/Muli-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'font-bold';
+    src: url('../assets/fonts/Muli-Bold.ttf');
+}
+
+::ng-deep body {
+    font-family: 'font-regular';
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.FR {
+    float: right;
+}
+
+.txtLeft {
+    text-align: left;
+}
+
+.txtCenter {
+    text-align: center;
+}
+
+.txtRight {
+    text-align: right;
+}
+
+.width15 {
+    width: 15%;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.width25 {
+    width: 25%;
+}
+
+#pageHeading {
+    font-family: 'font-bold';
+    font-size: 3vh;
+}
+
+#stockTable {
+    min-width: 90%;
+    margin: 0 5% 0 5%;
+    box-shadow: 0px 0px 2px 0 rgba(32, 33, 36, 0.28);
+    padding: 1vh 4vh 0 4vh;
+    .tableRow {
+        height: 3vmax;
+        td {
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        .stockName {
+            font-family: 'font-semibold';
+            text-transform: uppercase;
+        }
+        .priceDiff {
+            height: 1.5vmax;
+            width: 7vmax;
+            margin: 0 auto;
+            padding: 0.5vmax;
+            background: #fff;
+            border-radius: 0.5vmax;
+            box-shadow: 0px 0px 2px 0 rgba(32, 33, 36, 0.28);
+            &.negetive {
+                background: $danger-color;
+            }
+            &.positive {
+                background: $positive-color;
+            }
+            span,
+            i {
+                color: $white-color;
+                line-height: 1.5vmax;
+            }
+        }
+        #line-chart-parent {
+            display: grid;
+            height: 3vmax;
+            width: 10vmax;
+            margin: 0 auto;
+        }
+    }
+    .tableRow:hover,
+    .active {
+        background-color: $light-blue-color;
+    }
+    thead th {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        height: 6vh;
+    }
+}
