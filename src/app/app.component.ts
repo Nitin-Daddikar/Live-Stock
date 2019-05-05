@@ -17,7 +17,7 @@ export class AppComponent {
 
     //observable to handle websocket response
     appService.stocks.subscribe(updatedStockList => {
-        this.updateStocks(updatedStockList)
+      this.updateStocks(updatedStockList);
     });
   }
 

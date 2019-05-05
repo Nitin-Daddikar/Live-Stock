@@ -58,7 +58,8 @@ $light-blue-color: #f2f8fd;
 
 #pageHeading {
     font-family: 'font-bold';
-    font-size: 3vh;
+    font-size: calc(3 * (1vw + 1vh - 1vmin));
+    ;
 }
 
 #stockTable {
@@ -67,7 +68,8 @@ $light-blue-color: #f2f8fd;
     box-shadow: 0px 0px 2px 0 rgba(32, 33, 36, 0.28);
     padding: 1vh 4vh 0 4vh;
     .tableRow {
-        height: 3vmax;
+        /*calculate vmax as IE doesnt support vmax */
+        height: calc(3 * (1vw + 1vh - 1vmin));
         td {
             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
         }
@@ -76,12 +78,13 @@ $light-blue-color: #f2f8fd;
             text-transform: uppercase;
         }
         .priceDiff {
-            height: 1.5vmax;
-            width: 7vmax;
+            /*calculate vmax as IE doesnt support vmax */
+            height: calc(1.5 * (1vw + 1vh - 1vmin));
+            width: calc(7 * (1vw + 1vh - 1vmin));
+            padding: calc(0.5 * (1vw + 1vh - 1vmin));
+            border-radius: calc(0.5 * (1vw + 1vh - 1vmin));
             margin: 0 auto;
-            padding: 0.5vmax;
             background: #fff;
-            border-radius: 0.5vmax;
             box-shadow: 0px 0px 2px 0 rgba(32, 33, 36, 0.28);
             &.negetive {
                 background: $danger-color;
@@ -92,13 +95,15 @@ $light-blue-color: #f2f8fd;
             span,
             i {
                 color: $white-color;
-                line-height: 1.5vmax;
+                /*calculate vmax as IE doesnt support vmax */
+                line-height: calc(1.5 * (1vw + 1vh - 1vmin));
             }
         }
         #line-chart-parent {
             display: grid;
-            height: 3vmax;
-            width: 10vmax;
+            /*calculate vmax as IE doesnt support vmax */
+            height: calc(3 * (1vw + 1vh - 1vmin));
+            width: calc(10 * (1vw + 1vh - 1vmin));
             margin: 0 auto;
         }
     }
@@ -108,6 +113,7 @@ $light-blue-color: #f2f8fd;
     }
     thead th {
         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-        height: 6vh;
+        height: calc(6 * (1vw + 1vh - 1vmin));
+        ;
     }
 }
